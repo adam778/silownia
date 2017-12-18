@@ -13,7 +13,7 @@ public class Test {
     private Sprzet_SalaRepository sprzet_salaRepository;
 
     @Autowired
-    public DatabaseTest(SalaRepository salatabela, SilowniaRepository silowniaTabela, Sl_MiastaRepository sl_miastaTabela, Sl_SprzetuRepository sl_sprzetuTabela, Sprzet_SalaRepository sprzet_salaTabela) {
+    public Test(SalaRepository salatabela, SilowniaRepository silowniaTabela, Sl_MiastaRepository sl_miastaTabela, Sl_SprzetuRepository sl_sprzetuTabela, Sprzet_SalaRepository sprzet_salaTabela) {
         this.salaRepository = salatabela;
         this.silowniaRepository = silowniaTabela;
         this.sl_miastaRepository = sl_miastaTabela;
