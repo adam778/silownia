@@ -14,13 +14,17 @@ import javax.persistence.GenerationType;
 //@Builder
 public class Sprzet_Sala {
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int _id;
-    private int idSala;
-    private int idSprzet;
+    private long id;
+    private long idSala;
+    private long idSprzet;
 
-    Sprzet_Sala(int idSala, int idSprzet){
+    Sprzet_Sala(long idSala, long idSprzet){
         this.idSala = idSala;
         this.idSprzet = idSprzet;
+    }
+
+    public long getId(){
+        return id;
     }
    // Sprzet_Sala(){};
 

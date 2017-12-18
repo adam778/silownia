@@ -17,7 +17,7 @@ import javax.persistence.Id;
 public class Sl_Sprzetu {
 @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int _id;
+    private long id;
 
     private String nazwasprzetu;
 
@@ -25,6 +25,10 @@ public class Sl_Sprzetu {
         this.nazwasprzetu = nazwasprzetu;
     }
 
-    protected Sl_Sprzetu(){};
+    //protected Sl_Sprzetu(){};
+
+    public long getId(){
+        return id;
+    }
 
 }

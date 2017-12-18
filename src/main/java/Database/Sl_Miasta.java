@@ -17,12 +17,16 @@ import javax.persistence.Id;
 public class Sl_Miasta {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int _id;
+    private long id;
     private String nazwa;
 
     Sl_Miasta(String nazwa){
         this.nazwa = nazwa;
     }
-    protected Sl_Miasta(){}
+   // protected Sl_Miasta(){}
+
+    public long getId(){
+        return id;
+    }
 
 }

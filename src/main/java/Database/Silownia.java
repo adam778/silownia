@@ -17,17 +17,21 @@ import javax.persistence.Id;
 public class Silownia {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int _id;
+    private long id;
 
     private String nazwa;
-    private int _idMiasto;
+    private long _idMiasto;
     private String opis;
     private int liczbasal;
 
-    Silownia (String nazwa, int idMiasto, String opis, int liczbasal){
+    Silownia (String nazwa, long idMiasto, String opis, long liczbasal){
         this.nazwa = nazwa;
         this._idMiasto = idMiasto;
         this.opis = opis;
+    }
+
+    public long getId(){
+        return id;
     }
    // protected Silownia(){};
 
