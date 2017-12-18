@@ -1,6 +1,5 @@
-package Database;
+package com.pz.gym.Database;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,16 +23,17 @@ public class Silownia {
     private String opis;
     private int liczbasal;
 
-    Silownia (String nazwa, long idMiasto, String opis, long liczbasal){
+   public Silownia (String nazwa, long idMiasto, String opis, int liczbasal){
         this.nazwa = nazwa;
         this._idMiasto = idMiasto;
         this.opis = opis;
+        this.liczbasal = liczbasal;
     }
 
     public long getId(){
         return id;
     }
-   // protected Silownia(){};
+   public Silownia(){}
 
 
 }

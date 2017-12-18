@@ -1,31 +1,33 @@
-package Database;
+package com.pz.gym.Database;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 @Getter
 @Setter
 //@Builder
-public class Sprzet_Sala {
+
+public class Sl_Sprzetu {
+@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private long idSala;
-    private long idSprzet;
 
-    Sprzet_Sala(long idSala, long idSprzet){
-        this.idSala = idSala;
-        this.idSprzet = idSprzet;
+    private String nazwasprzetu;
+
+    public Sl_Sprzetu(String nazwasprzetu){
+        this.nazwasprzetu = nazwasprzetu;
     }
+
+    public Sl_Sprzetu(){};
 
     public long getId(){
         return id;
     }
-   // Sprzet_Sala(){};
 
 }

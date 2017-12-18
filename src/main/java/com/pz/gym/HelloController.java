@@ -1,16 +1,16 @@
 package com.pz.gym;
 
-import Database.Test;
+import com.pz.gym.Database.Test;
 import javafx.fxml.FXML;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Hellocontroller {
+public class HelloController {
     private Test test;
 
     @Autowired
-    public Hellocontroller(Test test){
+    public HelloController(Test test){
         this.test = test;
 
     }

@@ -1,7 +1,8 @@
-package Database;
+package com.pz.gym.Database;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 
 @Component
 public class Test {
