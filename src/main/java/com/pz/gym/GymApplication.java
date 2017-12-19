@@ -11,7 +11,7 @@ public class GymApplication extends AbstractJavaFxApplicationSupport {
 		launchApp(GymApplication.class, GymView.class, args);
 
 	}
-
+	@Override
 	public void start(Stage stage) throws Exception{
 		super.start(stage);
 	}

@@ -37,12 +37,13 @@ public class Test {
         this.sl_sprzetuRepository.save(new Sl_Sprzetu("lawka"));
         this.sl_sprzetuRepository.save(new Sl_Sprzetu("drazek"));
 
-        this.salaRepository.save(new Sala("Fit", "test",silowniaRepository.findSilowniaByNazwa("SilowniaFit").getId()));
-        this.salaRepository.save(new Sala("Tif", "test",silowniaRepository.findSilowniaByNazwa("Silownia").getId()));
+
 
         this.silowniaRepository.save(new Silownia("SilowniaFit",sl_miastaRepository.findSl_MiastaByNazwa("Warszawa").getId(),"test",5));
         this.silowniaRepository.save(new Silownia("Silownia",sl_miastaRepository.findSl_MiastaByNazwa("Poznan").getId(),"test",5));
 
+        this.salaRepository.save(new Sala("Fit", "test",silowniaRepository.findSilowniaByNazwa("SilowniaFit").getId()));
+        this.salaRepository.save(new Sala("Tif", "test",silowniaRepository.findSilowniaByNazwa("Silownia").getId()));
 
         this.sprzet_salaRepository.save(new Sprzet_Sala(salaRepository.findSalaByNazwa("Fit").getId(),sl_sprzetuRepository.findSl_SprzetuByNazwasprzetu("lawka").getId()));
         this.sprzet_salaRepository.save(new Sprzet_Sala(salaRepository.findSalaByNazwa("Tif").getId(),sl_sprzetuRepository.findSl_SprzetuByNazwasprzetu("drazek").getId()));
@@ -56,7 +57,7 @@ public class Test {
         System.out.println("Sala");
         System.out.println("-----------");
         for (Sala sala : this.salaRepository.findAll()){
-            System.out.println(sala);
+            System.out.println(sala.getNazwa());
         }
 
         System.out.println("Silownia");
