@@ -1,5 +1,6 @@
 package com.pz.gym.Database;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +12,7 @@ import javax.persistence.Id;
 @Entity
 @Setter
 @Getter
-//@Builder
+@Builder
 
 public class Sl_Miasta {
     @Id
@@ -19,13 +20,5 @@ public class Sl_Miasta {
     private long id;
     private String nazwa;
 
-   public Sl_Miasta(String nazwa){
-        this.nazwa = nazwa;
-    }
-    public Sl_Miasta(){}
-
-    public long getId(){
-        return id;
-    }
 
 }

@@ -1,5 +1,6 @@
 package com.pz.gym.Database;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +12,7 @@ import javax.persistence.Id;
 @Entity
 @Setter
 @Getter
-//@Builder
+@Builder
 
 public class Silownia {
     @Id
@@ -22,18 +23,5 @@ public class Silownia {
     private long _idMiasto;
     private String opis;
     private int liczbasal;
-
-   public Silownia (String nazwa, long idMiasto, String opis, int liczbasal){
-        this.nazwa = nazwa;
-        this._idMiasto = idMiasto;
-        this.opis = opis;
-        this.liczbasal = liczbasal;
-    }
-
-    public long getId(){
-        return id;
-    }
-   public Silownia(){}
-
 
 }

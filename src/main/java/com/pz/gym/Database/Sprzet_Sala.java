@@ -1,5 +1,6 @@
 package com.pz.gym.Database;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +12,7 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-//@Builder
+@Builder
 public class Sprzet_Sala {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,15 +20,5 @@ public class Sprzet_Sala {
 
     private long idSala;
     private long idSprzet;
-
-    public Sprzet_Sala(long idSala, long idSprzet){
-        this.idSala = idSala;
-        this.idSprzet = idSprzet;
-    }
-
-    public long getId(){
-        return id;
-    }
-    public Sprzet_Sala(){}
 
 }
