@@ -31,22 +31,22 @@ public class Test {
         this.sprzet_salaRepository.deleteAll();
 
 
-        this.sl_miastaRepository.save(new Sl_Miasta("Warszawa"));
-        this.sl_miastaRepository.save(new Sl_Miasta("Poznan"));
+        this.sl_miastaRepository.save(Sl_Miasta.builder().nazwa("Warszawa").build());
+        this.sl_miastaRepository.save(Sl_Miasta.builder().nazwa("Poznan").build());
 
-        this.sl_sprzetuRepository.save(new Sl_Sprzetu("lawka"));
-        this.sl_sprzetuRepository.save(new Sl_Sprzetu("drazek"));
+        this.sl_sprzetuRepository.save(Sl_Sprzetu.builder().nazwasprzetu("lawka").build());
+        this.sl_sprzetuRepository.save(Sl_Sprzetu.builder().nazwasprzetu("drazek").build());
 
 
 
-        this.silowniaRepository.save(new Silownia("SilowniaFit",sl_miastaRepository.findSl_MiastaByNazwa("Warszawa").getId(),"test",5));
-        this.silowniaRepository.save(new Silownia("Silownia",sl_miastaRepository.findSl_MiastaByNazwa("Poznan").getId(),"test",5));
+        this.silowniaRepository.save(Silownia.builder().nazwa("SilowniaFit")._idMiasto(sl_miastaRepository.findSl_MiastaByNazwa("Warszawa").getId()).opis("test").liczbasal(5).build());
+        this.silowniaRepository.save(Silownia.builder().nazwa("Silownia")._idMiasto(sl_miastaRepository.findSl_MiastaByNazwa("Poznan").getId()).opis("test").liczbasal(5).build());
 
-        this.salaRepository.save(new Sala("Fit", "test",silowniaRepository.findSilowniaByNazwa("SilowniaFit").getId()));
-        this.salaRepository.save(new Sala("Tif", "test",silowniaRepository.findSilowniaByNazwa("Silownia").getId()));
+        this.salaRepository.save(Sala.builder().nazwa("Fit").opis("test").idSilownia(silowniaRepository.findSilowniaByNazwa("SilowniaFit").getId()).build());
+        this.salaRepository.save(Sala.builder().nazwa("Tif").opis("test").idSilownia(silowniaRepository.findSilowniaByNazwa("Silownia").getId()).build());
 
-        this.sprzet_salaRepository.save(new Sprzet_Sala(salaRepository.findSalaByNazwa("Fit").getId(),sl_sprzetuRepository.findSl_SprzetuByNazwasprzetu("lawka").getId()));
-        this.sprzet_salaRepository.save(new Sprzet_Sala(salaRepository.findSalaByNazwa("Tif").getId(),sl_sprzetuRepository.findSl_SprzetuByNazwasprzetu("drazek").getId()));
+        this.sprzet_salaRepository.save(Sprzet_Sala.builder().idSala(salaRepository.findSalaByNazwa("Fit").getId()).idSprzet(sl_sprzetuRepository.findSl_SprzetuByNazwasprzetu("lawka").getId()).build());
+        this.sprzet_salaRepository.save(Sprzet_Sala.builder().idSala(salaRepository.findSalaByNazwa("Tif").getId()).idSprzet(sl_sprzetuRepository.findSl_SprzetuByNazwasprzetu("drazek").getId()).build());
 
 
     }
@@ -77,7 +77,6 @@ public class Test {
         for (Sl_Sprzetu sl_sprzetu : this.sl_sprzetuRepository.findAll()){
             System.out.println(sl_sprzetu);
         }
-
         System.out.println("Sprzet sala");
         System.out.println("-----------");
         for (Sprzet_Sala sprzet_sala : this.sprzet_salaRepository.findAll()){

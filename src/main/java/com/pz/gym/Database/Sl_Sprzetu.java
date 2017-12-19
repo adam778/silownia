@@ -1,8 +1,6 @@
 package com.pz.gym.Database;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +11,8 @@ import javax.persistence.Id;
 @Getter
 @Setter
 @Builder
-
+@AllArgsConstructor
+@NoArgsConstructor
 public class Sl_Sprzetu {
 @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
