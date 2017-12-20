@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class GymApplication extends AbstractJavaFxApplicationSupport {
 
 	public static void main(String[] args) {
-		launchApp(GymApplication.class, GymView.class, args);
+		launchApp(GymApplication.class, Gym.class, args);
 
 	}
 	@Override

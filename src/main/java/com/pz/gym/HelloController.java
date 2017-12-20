@@ -1,11 +1,12 @@
 package com.pz.gym;
 
 import com.pz.gym.Database.Test;
+import de.felixroske.jfxsupport.FXMLController;
 import javafx.fxml.FXML;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-@Component
+
+@FXMLController
 public class HelloController {
     private Test test;
 
@@ -18,6 +19,6 @@ public class HelloController {
     public void handleButtonAction(){
         this.test.loadData();
         this.test.printTestData();
-
+        GymApplication.showView(GymAllView.class);
     }
 }
