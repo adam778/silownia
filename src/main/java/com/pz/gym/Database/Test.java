@@ -39,7 +39,7 @@ public class Test {
 
 
 
-        this.silowniaRepository.save(Silownia.builder().nazwa("SilowniaFit")._idMiasto(sl_miastaRepository.findSl_MiastaByNazwa("Warszawa").getId()).opis("test").liczbasal(5).build());
+        this.silowniaRepository.save(Silownia.builder().nazwa("SilowniaFit")._idMiasto(sl_miastaRepository.findSl_MiastaByNazwa("Warszawa").getId()).opis("test1231").liczbasal(5).build());
         this.silowniaRepository.save(Silownia.builder().nazwa("Silownia")._idMiasto(sl_miastaRepository.findSl_MiastaByNazwa("Poznan").getId()).opis("test").liczbasal(5).build());
 
         this.salaRepository.save(Sala.builder().nazwa("Fit").opis("test").idSilownia(silowniaRepository.findSilowniaByNazwa("SilowniaFit").getId()).build());
@@ -63,7 +63,7 @@ public class Test {
         System.out.println("Silownia");
         System.out.println("-----------");
         for (Silownia silownia : this.silowniaRepository.findAll()){
-            System.out.println(silownia);
+            System.out.println(silownia.getNazwa());
         }
 
         System.out.println("Sl Miasta");

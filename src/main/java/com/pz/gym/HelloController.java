@@ -10,15 +10,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class HelloController {
     private Test test;
 
+
+
     @Autowired
     public HelloController(Test test){
         this.test = test;
 
     }
+
     @FXML
     public void handleButtonAction(){
         this.test.loadData();
         this.test.printTestData();
-        GymApplication.showView(GymAllView.class);
+        GymApplication.showView(GymAView.class);
+
+
     }
 }
