@@ -66,7 +66,7 @@ public class GymMainscreenViewController {
 
 
     private String login ="4194d1706ed1f408d5e02d672777019f4d5385c766a8c6ca8acba3167d36a7b9";
-    private String haslo ="5aaef626b84ae921650d6d68dcffd9d54d94f80f0fc19e596e04d455877f6db0";
+    private String haslo ="4194d1706ed1f408d5e02d672777019f4d5385c766a8c6ca8acba3167d36a7b9";
 
 
     private String hlogin;
