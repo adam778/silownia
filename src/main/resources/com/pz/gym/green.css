@@ -1,0 +1,13 @@
+.button{
+    -fx-background-color: greenyellow;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-text-fill: black;
+    -fx-border-color: #1f4051;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+.root{
+    -fx-background-color: lightgreen;
+    -fx-font-size: 17;
+    -fx-font-weight: bold ;
+}

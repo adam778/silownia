@@ -14,7 +14,7 @@ public class GymApplication extends AbstractJavaFxApplicationSupport {
 
 
 	public static void main(String[] args) {
-		launchApp(GymApplication.class, Gym.class, args);
+		launchApp(GymApplication.class, GymMainscreenView.class, args);
 
 	}
 	@Override

@@ -4,5 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface Sl_MiastaRepository extends CrudRepository<Sl_Miasta, Long> {
     Sl_Miasta findSl_MiastaByNazwa(String nazwa);
+    Sl_Miasta findSl_MiastaById(Long id);
 
 }

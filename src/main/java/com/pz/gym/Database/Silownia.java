@@ -2,10 +2,7 @@ package com.pz.gym.Database;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Setter
@@ -20,7 +17,9 @@ public class Silownia {
 
     private String nazwa;
     private long _idMiasto;
-    private String opis;
+    @Column (columnDefinition = "VARCHAR(10000)")
+    private  String opis;
     private int liczbasal;
+    private String urlMapy;
 
 }

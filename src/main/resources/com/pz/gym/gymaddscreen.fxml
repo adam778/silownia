@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pz.gym.GymAddscreenViewController">
+   <children>
+      <Label layoutX="63.0" layoutY="63.0" text="%label_gymname" textAlignment="CENTER" />
+      <Label layoutX="61.0" layoutY="205.0" text="%label_gymaddres" textAlignment="CENTER" />
+      <Label layoutX="580.0" layoutY="70.0" text="%label_gymequipment" />
+      <Label layoutX="61.0" layoutY="440.0" text="%label_gymroomsnr" textAlignment="CENTER" />
+      <TextArea fx:id="textarea_gymequipment" layoutX="490.0" layoutY="151.0" prefHeight="200.0" prefWidth="281.0" wrapText="true" />
+      <ListView fx:id="list_gymaddres" layoutX="159.0" layoutY="151.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextField fx:id="textfield_gymname" layoutX="159.0" layoutY="59.0" onMouseClicked="#loadgymaddres" />
+      <TextField fx:id="textfield_gymroomsnr" layoutX="159.0" layoutY="436.0" />
+      <Button fx:id="button_gymadd" layoutX="213.0" layoutY="524.0" mnemonicParsing="false" onAction="#gymadd" text="%button_gymadd" />
+      <Button fx:id="button_clear" layoutX="400.0" layoutY="524.0" mnemonicParsing="false" onAction="#clearall" text="%button._clear" />
+      <Button fx:id="button_goback" layoutX="580.0" layoutY="524.0" mnemonicParsing="false" onAction="#goback" text="%button_goback" />
+      <TextField fx:id="textfield_gymmapurl" layoutX="490.0" layoutY="436.0" prefHeight="23.0" prefWidth="298.0" />
+      <Label layoutX="395.0" layoutY="440.0" text="%label_gymmapurl" textAlignment="CENTER" />
+   </children>
+</Pane>
