@@ -46,6 +46,7 @@
             <TextArea fx:id="textarea_gymroomsnr" editable="false" layoutX="125.0" layoutY="226.0" prefHeight="29.0" prefWidth="200.0" />
             <Label layoutX="48.0" layoutY="236.0" text="%label_gymroomsnr" />
             <Button fx:id="button_gymedit" layoutX="121.0" layoutY="497.0" mnemonicParsing="false" onAction="#editgym" text="%button_gymedit" />
+            <Button fx:id="button_logout" layoutX="125.0" layoutY="553.0" mnemonicParsing="false" onAction="#logout" text="%button_logout" />
          </children>
       </Pane>
       <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">

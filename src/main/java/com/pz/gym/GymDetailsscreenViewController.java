@@ -17,6 +17,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.logging.Logger;
@@ -63,6 +64,8 @@ public class GymDetailsscreenViewController {
 
     @FXML
     private Button button_gymdelete;
+
+
 
 
     private final static Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -227,6 +230,17 @@ public class GymDetailsscreenViewController {
         log.severe("Usunieto siłownie");
 
     }
+    @FXML
+    public void logout(){
+        textarea_gymequipment.clear();
+        textarea_gymroomsnr.clear();
+        textarea_gymname.clear();
+        textarea_gymaddres.clear();
+        list_gymlist.setItems(null);
+        imageview_gymmap.setImage(null);
+        GymApplication.showView(GymMainscreenView.class);
+        log.info("Pomyslnie wylogowano uzytkownika");
 
+    }
 
 }

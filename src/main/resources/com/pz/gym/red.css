@@ -4,7 +4,13 @@
     -fx-text-fill: darkblue;
     -fx-border-color: #1f4051;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-font-size: 13;
 }
 .root{
     -fx-background-color: lightcoral;
+}
+.label{
+    -fx-font-weight: bold;
+    -fx-text-fill: darkblue;
+    -fx-effect: dropshadow( three-pass-box , rgba(1,1,0,0.6) , 5, 0.5 , 7 , 1 );
 }

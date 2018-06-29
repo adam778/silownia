@@ -7,13 +7,27 @@ import com.pz.gym.Exceptions.WrongPasswordorUserException;
 import de.felixroske.jfxsupport.FXMLController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import java.net.MalformedURLException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
 import java.util.logging.Logger;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 
 
 @FXMLController
@@ -44,6 +58,11 @@ public class GymMainscreenViewController {
 
     @FXML
     private PasswordField passwordfield_haslo;
+
+    @FXML
+    private Label label_yahoo;
+
+
 
 
     private String login ="4194d1706ed1f408d5e02d672777019f4d5385c766a8c6ca8acba3167d36a7b9";
@@ -87,7 +106,7 @@ public class GymMainscreenViewController {
             passwordfield_haslo.clear();
 
             GymApplication.showView(GymDetailsscreenView.class);
-            log.severe("Pomyślnie zalogowano użytkownika");
+            log.info("Pomyślnie zalogowano użytkownika");
 
         }
        else throw new WrongPasswordorUserException();
@@ -109,6 +128,13 @@ public class GymMainscreenViewController {
         gymDetailsscreenView.getView().getStylesheets().add(skorka);
         gymAddscreenView.getView().getStylesheets().clear();
         gymAddscreenView.getView().getStylesheets().add(skorka);
+        try {
+            time_from_yahoo();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        }
 
     };
     @FXML
@@ -144,5 +170,26 @@ public class GymMainscreenViewController {
 
 
     }
+    private void time_from_yahoo() throws ParserConfigurationException, SAXException {
+        String url = "https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20%3D%20523920&format=xml&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
+        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder db =  documentBuilderFactory.newDocumentBuilder();
+        Document doc = null;
+        try {
+            doc = db.parse(url);
+        } catch (IOException e) {
+            log.severe("Zapytanie Yahoo nie działa" + e);
+        }
+        NodeList meteo = doc.getElementsByTagName("yweather:condition");
+        label_yahoo.setText( meteo.item(0)
+                .getAttributes().getNamedItem("date").getNodeValue()+ ", " + meteo.item(0)
+                .getAttributes().getNamedItem("temp").getNodeValue() +"F");
+
+    }
+
+
+
+
+
 
 }

@@ -3,8 +3,14 @@
     -fx-font-weight: bold;
     -fx-text-fill: red;
     -fx-border-color: #1f4051;
-    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-effect: dropshadow( three-pass-box , rgba(0,1,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-font-size: 14;
 }
 .root{
     -fx-background-color: lightyellow;
+}
+.label{
+    -fx-font-weight: bold;
+    -fx-text-fill: red;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,1,0,0.6) , 5, 1.0 , 2 , 1 );
 }
